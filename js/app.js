@@ -135,7 +135,7 @@ const peticionDelete = () => {
 	.catch( error => console.log( 'error', error ) );
 }
 
-obtainRequest.addEventListener( "click", () => {
+obtainRequest.addEventListener( "change", () => {
 
 	if ( obtainRequest.value === "GETAll" ){
 		formUuid.disabled =  true;
