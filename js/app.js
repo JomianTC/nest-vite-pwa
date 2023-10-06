@@ -8,7 +8,7 @@ const responseDataTable = document.querySelector( "#responseDataTable" );
 
 const responseDiv = document.querySelector( "#responseDiv" );
 
-// const apiUrl = "http://localhost:3000/"
+const apiUrl = "https://nestjs-vite-pwa-api.onrender.com/"
 
 const startApp = () => {
 
