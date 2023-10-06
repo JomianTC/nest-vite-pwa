@@ -8,6 +8,12 @@ const responseDataTable = document.querySelector( "#responseDataTable" );
 
 const responseDiv = document.querySelector( "#responseDiv" );
 
+const optionGETAll = document.querySelector( "#optionGETAll" );
+const optionGET = document.querySelector( "#optionGET" );
+const optionPOST = document.querySelector( "#optionPOST" );
+const optionPATCH = document.querySelector( "#optionPATCH" );
+const optionDELETE = document.querySelector( "#optionDELETE" );
+
 const apiUrl = "https://nestjs-vite-pwa-api.onrender.com/"
 
 const startApp = () => {
@@ -156,6 +162,41 @@ obtainRequest.addEventListener( "click", () => {
 		formName.disabled =  true;
 		formEmail.disabled = true;
 	}	
+});
+
+optionGETAll.addEventListener( "click", () => {
+
+		formUuid.disabled =  true;
+		formName.disabled =  true;
+		formEmail.disabled = true;
+});
+
+optionGET.addEventListener( "click", () => {
+
+		formUuid.disabled =  false;
+		formName.disabled =  true;
+		formEmail.disabled = true;
+});
+
+optionPOST.addEventListener( "click", () => {
+
+		formUuid.disabled =  true;
+		formName.disabled =  false;
+		formEmail.disabled = false;
+});
+
+optionPATCH.addEventListener( "click", () => {
+
+		formUuid.disabled =  false;
+		formName.disabled =  false;
+		formEmail.disabled = false;
+});
+
+optionDELETE.addEventListener( "click", () => {
+
+		formUuid.disabled =  false;
+		formName.disabled =  true;
+		formEmail.disabled = true;
 });
 
 btnSubmit.addEventListener( "click", () => {
