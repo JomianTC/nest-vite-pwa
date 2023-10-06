@@ -42,12 +42,23 @@ const showResponse = ( response ) => {
 	});
 }
 
+const showError = ( error ) => {
+
+	responseDataTable.innerHTML = "";
+
+	const tableDataContainer = document.createElement( "p" );
+	tableDataContainer.innerHTML = `<span>${ error }</span>`;
+
+	responseDiv.hidden = false;
+	responseDataTable.append( tableDataContainer );
+}
+
 const peticionGetAll = () => {
 
 	fetch( apiUrl + "users" )
 	.then( response => response.json() )
 	.then( showResponse )
-	.catch( error => console.log( 'error', error ));
+	.catch( showError );
 }
 
 const peticionGet = () => {
@@ -55,7 +66,7 @@ const peticionGet = () => {
 	fetch( apiUrl + "users/" + formUuid.value  )
 	.then( response => response.json() )
 	.then( data => showResponse([ data ]) )
-	.catch( error => console.log( 'error', error ));
+	.catch( showError );
 }
 
 const peticionPost = () => {
@@ -77,7 +88,7 @@ const peticionPost = () => {
 		console.log( mensaje );
 		showResponse([ user ])}
 	)
-	.catch( error => console.log( 'error', error ));
+	.catch( showError );
 }
 
 const peticionPatch = () => {
@@ -99,7 +110,7 @@ const peticionPatch = () => {
 		console.log( mensaje );
 		showResponse([ userFound ])}
 	)
-	.catch( error => console.log( 'error', error ));
+	.catch( showError );
 }
 
 const peticionDelete = () => {
@@ -107,7 +118,7 @@ const peticionDelete = () => {
 	fetch( apiUrl + "users/" + formUuid.value, { method: "DELETE" })
 	.then( response => response.json() )
 	.then( userFound => showResponse([ userFound ]) )
-	.catch( error => console.log( 'error', error ));
+	.catch( showError );
 }
 
 obtainRequest.addEventListener( "click", () => {
