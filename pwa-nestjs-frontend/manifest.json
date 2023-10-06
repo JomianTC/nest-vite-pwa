@@ -1,0 +1,16 @@
+{
+	"short_name": "NestVitePwa",
+	"name": "PWA con Nest & Vite",
+	"start_url": "index.html",
+	"background_color": "#333333",
+	"theme_color": "#333333",
+	"display": "standalone",
+	"orientation": "portrait",
+	"icons": [
+		{
+			"src": "img/icons/icon-512x512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
+}
