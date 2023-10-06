@@ -1,0 +1,72 @@
+html, body {
+    margin: 0px !important;
+	padding: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: #333333;
+	color: white;
+	font-size: 20pt;
+	font-family: 'Raleway', sans-serif;
+
+	overscroll-behavior-y: contain;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 10px;
+}
+
+select {
+	padding: 5px;
+	margin-top: 10px;
+	background-color: #333333;
+	font-size: 18pt;
+	color: white;
+}
+
+form {
+	text-align: center;
+	margin-top: 10px;
+}
+
+button, #responseDiv {
+	margin-top: 10px;
+	text-align: center;
+	background-color: #333333;
+	color: white;
+	font-size: 20pt;
+	border-radius: 10px;
+	border-color: #333333;
+}
+
+input {
+
+	border: 1px solid #333;
+	padding: 10px;
+	font-size: 16px;
+	transition: border-color 0.3s;
+}
+
+table {
+	border-collapse: collapse;
+	width: 80%;
+	margin: 10px auto;
+}
+
+th, td {
+	border: 1px solid #222222;
+	padding: 8px;
+	text-align: left;
+	font-size: 10pt;
+}
