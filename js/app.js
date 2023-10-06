@@ -2,9 +2,9 @@ const formUuid  = document.querySelector( "#uuid" );
 const formName  = document.querySelector( "#name" );
 const formEmail = document.querySelector( "#email" );
 
+const responseDataTable = document.querySelector( "#responseDataTable" );
 const obtainRequest 	= document.querySelector( "#obtainRequest" );
 const btnSubmit 		= document.querySelector( "#btnSend" );
-const responseDataTable = document.querySelector( "#responseDataTable" );
 
 const responseDiv = document.querySelector( "#responseDiv" );
 
@@ -23,11 +23,6 @@ const startApp = () => {
 	formUuid.disabled = true;
 	formName.disabled = true;
 	formEmail.disabled = true;
-
-	// fetch( apiUrl + "seed" )
-	// 	.then( res => res.text() )
-	// 	.then( result => console.log( result ) )
-	// 	.catch( error => console.log( 'error', error ));
 }
 
 const showResponse = ( response ) => {
@@ -77,7 +72,7 @@ const peticionGet = () => {
 
 	fetch( apiUrl + "users/" + formUuid.value  )
 	.then( response => { 
-		if ( response.ok ) response.json().then( showResponse );
+		if ( response.ok ) response.json().then( res => {showResponse([ res ])} );
 		else response.json().then( showError );
 	})
 	.catch( error => console.log( 'error', error ) );
@@ -98,7 +93,7 @@ const peticionPost = () => {
 		body: JSON.stringify( bodyData ),
 	})
 	.then( response => { 
-		if ( response.ok ) response.json().then( showResponse );
+		if ( response.ok ) response.json().then( ({ user }) => {showResponse([ user ])} );
 		else response.json().then( showError );
 	})
 	.catch( error => console.log( 'error', error ) );
@@ -119,7 +114,7 @@ const peticionPatch = () => {
 		body: JSON.stringify( bodyData ),
 	})
 	.then( response => { 
-		if ( response.ok ) response.json().then( showResponse );
+		if ( response.ok ) response.json().then( ({ userFound }) => { showResponse([ userFound ]); } );
 		else response.json().then( showError );
 	})
 	.catch( error => console.log( 'error', error ) );
@@ -129,7 +124,7 @@ const peticionDelete = () => {
 
 	fetch( apiUrl + "users/" + formUuid.value, { method: "DELETE" })
 	.then( response => { 
-		if ( response.ok ) response.json().then( showResponse );
+		if ( response.ok ) response.json().then( res => {showResponse([ res ])} );
 		else response.json().then( showError );
 	})
 	.catch( error => console.log( 'error', error ) );
@@ -165,8 +160,6 @@ obtainRequest.addEventListener( "change", () => {
 });
 
 btnSubmit.addEventListener( "click", () => {
-
-	console.log( obtainRequest.value );
 
 	if ( obtainRequest.value === "GETAll" ) peticionGetAll();
 	if ( obtainRequest.value === "GET" ) peticionGet();
