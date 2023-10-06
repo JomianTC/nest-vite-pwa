@@ -164,41 +164,6 @@ obtainRequest.addEventListener( "change", () => {
 	}	
 });
 
-optionGETAll.addEventListener( "click", () => {
-
-		formUuid.disabled =  true;
-		formName.disabled =  true;
-		formEmail.disabled = true;
-});
-
-optionGET.addEventListener( "click", () => {
-
-		formUuid.disabled =  false;
-		formName.disabled =  true;
-		formEmail.disabled = true;
-});
-
-optionPOST.addEventListener( "click", () => {
-
-		formUuid.disabled =  true;
-		formName.disabled =  false;
-		formEmail.disabled = false;
-});
-
-optionPATCH.addEventListener( "click", () => {
-
-		formUuid.disabled =  false;
-		formName.disabled =  false;
-		formEmail.disabled = false;
-});
-
-optionDELETE.addEventListener( "click", () => {
-
-		formUuid.disabled =  false;
-		formName.disabled =  true;
-		formEmail.disabled = true;
-});
-
 btnSubmit.addEventListener( "click", () => {
 
 	console.log( obtainRequest.value );
